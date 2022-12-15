@@ -8,6 +8,7 @@ class GroundDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFE5E5E5),
       appBar: AppBar(
         backgroundColor: Colors.green,
         leading: IconButton(
@@ -111,7 +112,7 @@ class GroundDetails extends StatelessWidget {
             height: 280,
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(12.0)),
-              color: Colors.blue,
+              color: Colors.white70,
             ),
             child: Column(
               children: [
@@ -177,7 +178,7 @@ class GroundDetails extends StatelessWidget {
             height: 280,
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(12.0)),
-              color: Colors.blue,
+              color: Colors.white70,
             ),
             child: Column(
               children: [

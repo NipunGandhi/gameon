@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
         child: Stack(
           children: [
             SizedBox(
-              height: 280,
+              height: a.size.height / 3.10,
               width: double.infinity,
               child: Image.asset(
                 "assets/images/img_1.png",
@@ -29,9 +29,10 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Container(
-              height: a.size.height + -280 + a.viewPadding.top,
+              height:
+                  a.size.height + -(a.size.height / 3.10) + a.viewPadding.top,
               width: double.infinity,
-              margin: const EdgeInsets.only(top: 256),
+              margin: EdgeInsets.only(top: (a.size.height / 3.4765625)),
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
               decoration: const BoxDecoration(
                 color: Colors.white,
@@ -72,8 +73,8 @@ class _HomePageState extends State<HomePage> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const SizedBox(
-                            height: 40,
+                          SizedBox(
+                            height: a.size.height / 32,
                           ),
                           const Text(
                             "Enter Phone Number",
@@ -131,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                   Container(
-                    padding: const EdgeInsets.only(bottom: 100),
+                    padding: EdgeInsets.only(bottom: a.size.height / 15),
                     width: double.infinity,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,

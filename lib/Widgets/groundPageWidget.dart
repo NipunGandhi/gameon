@@ -8,6 +8,8 @@ class GroundPageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var a = MediaQuery.of(context).size;
+
     return Container(
       margin: const EdgeInsets.only(left: 15, bottom: 17, right: 15),
       padding: const EdgeInsets.only(left: 15, bottom: 10, right: 10, top: 17),
@@ -89,12 +91,12 @@ class GroundPageWidget extends StatelessWidget {
           Column(
             children: [
               Row(
-                children: const [
+                children: [
                   Text(
                     "Wankhede International Cricket Stadium",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: a.height / 43.5,
                     ),
                   ),
                 ],

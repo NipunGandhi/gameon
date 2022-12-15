@@ -11,20 +11,19 @@ class PinPage extends StatefulWidget {
 }
 
 class _PinPageState extends State<PinPage> {
+  TextEditingController controller1 = TextEditingController();
+  TextEditingController controller2 = TextEditingController();
+  TextEditingController controller3 = TextEditingController();
+  TextEditingController controller4 = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    TextEditingController controller1 = TextEditingController();
-    controller1.clear();
-    TextEditingController controller2 = TextEditingController();
-    TextEditingController controller3 = TextEditingController();
-    TextEditingController controller4 = TextEditingController();
     var a = MediaQuery.of(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Stack(
           children: [
             SizedBox(
-              height: 280,
+              height: a.size.height / 3.10,
               width: double.infinity,
               child: Image.asset(
                 "assets/images/img_1.png",
@@ -33,8 +32,9 @@ class _PinPageState extends State<PinPage> {
             ),
             Container(
               width: double.infinity,
-              height: a.size.height + -280 + a.viewPadding.top,
-              margin: const EdgeInsets.only(top: 256),
+              height:
+                  a.size.height + -(a.size.height / 3.10) + a.viewPadding.top,
+              margin: EdgeInsets.only(top: (a.size.height / 3.4765625)),
               padding: const EdgeInsets.all(15),
               decoration: const BoxDecoration(
                 color: Colors.white,
@@ -183,6 +183,57 @@ class _PinPageState extends State<PinPage> {
                           height: 50,
                           child: Center(
                             child: TextFormField(
+                              onChanged: (value) {
+                                if (value.length == 1) {
+                                  if (controller1.text == "1" &&
+                                      controller2.text == "2" &&
+                                      controller3.text == "3" &&
+                                      controller4.text == "4") {
+                                    Navigator.pushReplacementNamed(
+                                      context,
+                                      GroundListPage.name,
+                                    );
+                                  } else if (controller1.text.isEmpty ||
+                                      controller2.text.isEmpty ||
+                                      controller3.text.isEmpty ||
+                                      controller4.text.isEmpty) {
+                                    setState(() {
+                                      controller1.clear();
+                                      controller2.clear();
+                                      controller3.clear();
+                                      controller4.clear();
+                                    });
+                                    final snackBar = SnackBar(
+                                      content:
+                                          const Text('Enter the OTP first'),
+                                      backgroundColor: (Colors.black),
+                                      action: SnackBarAction(
+                                        label: 'Dismiss',
+                                        onPressed: () {},
+                                      ),
+                                    );
+                                    ScaffoldMessenger.of(context)
+                                        .showSnackBar(snackBar);
+                                  } else {
+                                    setState(() {
+                                      controller1.clear();
+                                      controller2.clear();
+                                      controller3.clear();
+                                      controller4.clear();
+                                    });
+                                    final snackBar = SnackBar(
+                                      content: const Text('Wrong OTP'),
+                                      backgroundColor: (Colors.black),
+                                      action: SnackBarAction(
+                                        label: 'Dismiss',
+                                        onPressed: () {},
+                                      ),
+                                    );
+                                    ScaffoldMessenger.of(context)
+                                        .showSnackBar(snackBar);
+                                  }
+                                }
+                              },
                               obscuringCharacter: '*',
                               obscureText: true,
                               decoration: const InputDecoration(
