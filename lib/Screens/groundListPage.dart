@@ -11,7 +11,7 @@ class GroundListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFBFDFE),
+      backgroundColor: const Color(0xFFE5E5E5),
       appBar: AppBar(
         backgroundColor: Colors.green,
         leading: IconButton(
@@ -35,7 +35,7 @@ class GroundListPage extends StatelessWidget {
         children: [
           Container(
             height: 85,
-            margin: const EdgeInsets.only(top: 20),
+            margin: const EdgeInsets.only(top: 10),
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: const [
@@ -115,7 +115,24 @@ class GroundListPage extends StatelessWidget {
                     },
                   ),
                 ),
-                const GroundPageWidget(),
+                Padding(
+                  padding: const EdgeInsets.all(0),
+                  child: GestureDetector(
+                    child: const GroundPageWidget(),
+                    onTap: () {
+                      Navigator.pushNamed(context, GroundDetails.name);
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(0),
+                  child: GestureDetector(
+                    child: const GroundPageWidget(),
+                    onTap: () {
+                      Navigator.pushNamed(context, GroundDetails.name);
+                    },
+                  ),
+                ),
               ],
             ),
           ),

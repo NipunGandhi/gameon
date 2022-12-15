@@ -14,7 +14,7 @@ class GroundPageWidget extends StatelessWidget {
       height: 290,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(15.0)),
-        color: Colors.white,
+        color: Colors.white70,
       ),
       child: Column(
         children: [
@@ -35,7 +35,12 @@ class GroundPageWidget extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text("20 Over"),
+                  const Text(
+                    " 20 Over",
+                    style: TextStyle(
+                      fontSize: 17,
+                    ),
+                  ),
                   Row(
                     children: const [
                       TimingButton(
@@ -52,7 +57,12 @@ class GroundPageWidget extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const Text("30 Over"),
+                  const Text(
+                    " 30 Over",
+                    style: TextStyle(
+                      fontSize: 17,
+                    ),
+                  ),
                   Row(
                     children: const [
                       TimingButton(

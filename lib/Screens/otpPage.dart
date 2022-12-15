@@ -206,10 +206,10 @@ class _OTPScreenState extends State<OTPScreen> {
                     ),
                   ),
                   const Text(
-                    "OTP sent to 7042082109",
+                    "OTP send to 9900265566",
                     style: TextStyle(
                       fontSize: 15,
-                      color: Color(0xff088F81),
+                      color: Color(0xff7FA89C),
                     ),
                   ),
                   const SizedBox(

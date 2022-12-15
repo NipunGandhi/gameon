@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 class Dates extends StatelessWidget {
   const Dates({
     Key? key,
-    this.background = Colors.white,
+    this.background = const Color(0xFFE5E5E5),
     this.textColor = Colors.black,
   }) : super(key: key);
   final Color background;
   final Color textColor;
+
   @override
   Widget build(BuildContext context) {
     return Container(
