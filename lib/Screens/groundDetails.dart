@@ -7,10 +7,22 @@ class GroundDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var a = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: const Color(0xFFE5E5E5),
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        toolbarHeight: 65,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            color: Color(0xFF088F81),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(12),
+              bottomRight: Radius.circular(12),
+            ),
+          ),
+        ),
         leading: IconButton(
           onPressed: () {},
           icon: const Icon(Icons.menu),
@@ -43,7 +55,13 @@ class GroundDetails extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const Text("Wankhede International Cricket Stadium"),
+                Text(
+                  "Wankhede International Cricket Stadium",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: a.height / 43.5,
+                  ),
+                ),
                 const SizedBox(
                   height: 7,
                 ),

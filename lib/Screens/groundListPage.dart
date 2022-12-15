@@ -13,7 +13,18 @@ class GroundListPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFE5E5E5),
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        toolbarHeight: 65,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            color: Color(0xFF088F81),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(12),
+              bottomRight: Radius.circular(12),
+            ),
+          ),
+        ),
         leading: IconButton(
           onPressed: () {},
           icon: const Icon(Icons.menu),
@@ -58,7 +69,7 @@ class GroundListPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.only(left: 15, right: 15, top: 10),
             child: Column(
               children: [
                 Row(
