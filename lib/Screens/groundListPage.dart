@@ -7,7 +7,7 @@ import '../Widgets/groundPageWidget.dart';
 class GroundListPage extends StatelessWidget {
   const GroundListPage({Key? key}) : super(key: key);
   static const String name = "GroundListPage";
-
+  static const List abc = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,22 +49,12 @@ class GroundListPage extends StatelessWidget {
             margin: const EdgeInsets.only(top: 10),
             child: ListView(
               scrollDirection: Axis.horizontal,
-              children: const [
-                Dates(),
-                Dates(),
-                Dates(
-                  background: Color(0xFF088F81),
-                  textColor: Colors.white,
-                ),
-                Dates(),
-                Dates(),
-                Dates(),
-                Dates(),
-                Dates(),
-                Dates(),
-                Dates(),
-                Dates(),
-                Dates(),
+              children: [
+                for (var i = 1; i < 10; i++)
+                  Dates(
+                    date: i.toString(),
+                    day: abc[i % 7],
+                  ),
               ],
             ),
           ),
@@ -120,7 +110,12 @@ class GroundListPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(0),
                   child: GestureDetector(
-                    child: const GroundPageWidget(),
+                    child: const GroundPageWidget(
+                      name: 'Wankhede International Cricket Stadium',
+                      location: 'Maharashtra, India',
+                      text: "Navigate",
+                      imagelink: "assets/images/wankhede.png",
+                    ),
                     onTap: () {
                       Navigator.pushNamed(context, GroundDetails.name);
                     },
@@ -129,7 +124,12 @@ class GroundListPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(0),
                   child: GestureDetector(
-                    child: const GroundPageWidget(),
+                    child: const GroundPageWidget(
+                      name: 'Narendra Modi Stadium',
+                      location: 'Gujarat, Ahmedabad',
+                      text: "Only 4 Km far.",
+                      imagelink: "assets/images/narendra.png",
+                    ),
                     onTap: () {
                       Navigator.pushNamed(context, GroundDetails.name);
                     },
@@ -138,7 +138,12 @@ class GroundListPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(0),
                   child: GestureDetector(
-                    child: const GroundPageWidget(),
+                    child: const GroundPageWidget(
+                      name: 'Jawaharlal Nehru Stadium',
+                      location: 'Delhi NCR, Delhi',
+                      text: "Only 2 Km far.",
+                      imagelink: "assets/images/jawarlal.png",
+                    ),
                     onTap: () {
                       Navigator.pushNamed(context, GroundDetails.name);
                     },

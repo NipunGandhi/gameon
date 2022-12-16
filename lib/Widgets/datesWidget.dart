@@ -5,9 +5,13 @@ class Dates extends StatelessWidget {
     Key? key,
     this.background = const Color(0xFFE5E5E5),
     this.textColor = Colors.black,
+    required this.date,
+    required this.day,
   }) : super(key: key);
   final Color background;
   final Color textColor;
+  final String date;
+  final String day;
 
   @override
   Widget build(BuildContext context) {
@@ -17,23 +21,27 @@ class Dates extends StatelessWidget {
         borderRadius: const BorderRadius.all(
           Radius.circular(15),
         ),
-        color: background,
+        color: date == "3" ? Colors.teal : background,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             "Jan",
-            style: TextStyle(fontSize: 15, color: textColor),
-          ),
-          Text(
-            "03",
             style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 15, color: textColor),
+                fontSize: 15, color: date == "3" ? Colors.white : textColor),
           ),
           Text(
-            "Sun",
-            style: TextStyle(fontSize: 15, color: textColor),
+            "0$date",
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 15,
+                color: date == "3" ? Colors.white : textColor),
+          ),
+          Text(
+            "$day",
+            style: TextStyle(
+                fontSize: 15, color: date == "3" ? Colors.white : textColor),
           ),
         ],
       ),

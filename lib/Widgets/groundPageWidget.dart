@@ -4,8 +4,16 @@ import 'package:gameon/Widgets/TimeButtonWidget.dart';
 class GroundPageWidget extends StatelessWidget {
   const GroundPageWidget({
     Key? key,
+    required this.name,
+    required this.location,
+    required this.text,
+    required this.imagelink,
   }) : super(key: key);
 
+  final String name;
+  final String location;
+  final String text;
+  final String imagelink;
   @override
   Widget build(BuildContext context) {
     var a = MediaQuery.of(context).size;
@@ -24,8 +32,8 @@ class GroundPageWidget extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: Image.network(
-                  "https://wisden.com/wp-content/uploads/2021/01/GettyImages-468776434-e1610533327422-980x530.jpg",
+                child: Image.asset(
+                  "$imagelink",
                   height: 135,
                   width: 106,
                   fit: BoxFit.cover,
@@ -40,7 +48,8 @@ class GroundPageWidget extends StatelessWidget {
                   const Text(
                     " 20 Over",
                     style: TextStyle(
-                      fontSize: 17,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Row(
@@ -62,7 +71,8 @@ class GroundPageWidget extends StatelessWidget {
                   const Text(
                     " 30 Over",
                     style: TextStyle(
-                      fontSize: 17,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Row(
@@ -93,7 +103,7 @@ class GroundPageWidget extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "Wankhede International Cricket Stadium",
+                    "$name",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: a.height / 43.5,
@@ -105,17 +115,17 @@ class GroundPageWidget extends StatelessWidget {
                 height: 10,
               ),
               Row(
-                children: const [
-                  Icon(
+                children: [
+                  const Icon(
                     Icons.location_on_outlined,
                     color: Colors.grey,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
                   Text(
-                    "Maharashtra, India",
-                    style: TextStyle(
+                    "$location",
+                    style: const TextStyle(
                       fontSize: 15,
                       color: Colors.grey,
                     ),
@@ -144,22 +154,24 @@ class GroundPageWidget extends StatelessWidget {
                       Text(
                         "Mat",
                         style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.bold),
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ],
                   ),
                   Row(
-                    children: const [
-                      Icon(
+                    children: [
+                      const Icon(
                         Icons.explore_outlined,
                         color: Color(0xFF088F81),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 5,
                       ),
                       Text(
-                        "Navigate",
-                        style: TextStyle(
+                        "$text",
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Color(0xFF088F81),
                         ),

@@ -7,8 +7,11 @@ class TimingButton extends StatelessWidget {
     this.timeColor = Colors.white,
     this.boxColor = const Color(0xFF088F81),
     this.borderColor = const Color(0xFF088F81),
+    this.height = 30,
+    this.width = 70,
   }) : super(key: key);
-
+  final double height;
+  final double width;
   final String time;
   final Color timeColor;
   final Color boxColor;
@@ -17,8 +20,8 @@ class TimingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 70,
-      height: 30,
+      width: width,
+      height: height,
       margin: const EdgeInsets.all(5),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(5.0)),
@@ -32,6 +35,7 @@ class TimingButton extends StatelessWidget {
           child: Text(
         time,
         style: TextStyle(
+          fontWeight: FontWeight.bold,
           color: timeColor,
         ),
       )),
