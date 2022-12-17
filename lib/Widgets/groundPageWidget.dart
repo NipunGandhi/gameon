@@ -56,15 +56,23 @@ class GroundPageWidget extends StatelessWidget {
                     children: const [
                       TimingButton(
                         time: '10:00 am',
+                        textStyle: TextStyle(
+                          color: Colors.white,
+                        ),
                       ),
                       TimingButton(
                         time: '1:00 pm',
                         borderColor: Colors.grey,
-                        timeColor: Colors.grey,
+                        textStyle: TextStyle(
+                          color: Colors.grey,
+                        ),
                         boxColor: Colors.white,
                       ),
                       TimingButton(
                         time: '4:00 pm',
+                        textStyle: TextStyle(
+                          color: Colors.white,
+                        ),
                       ),
                     ],
                   ),
@@ -78,15 +86,19 @@ class GroundPageWidget extends StatelessWidget {
                   Row(
                     children: const [
                       TimingButton(
-                        timeColor: Colors.red,
                         borderColor: Colors.red,
                         boxColor: Colors.white,
                         time: '2:00 pm',
+                        textStyle: TextStyle(
+                          color: Colors.red,
+                        ),
                       ),
                       TimingButton(
                         time: '4:00 pm',
                         borderColor: Colors.grey,
-                        timeColor: Colors.grey,
+                        textStyle: TextStyle(
+                          color: Colors.grey,
+                        ),
                         boxColor: Colors.white,
                       ),
                     ],

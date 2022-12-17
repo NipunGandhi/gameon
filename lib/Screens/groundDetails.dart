@@ -40,11 +40,20 @@ class GroundDetails extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                const Center(
-                    child: Text(
-                  "Sunday, 21 June 2021",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-                )),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset('assets/images/Calendar.png'),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    const Text(
+                      "Sunday, 21 June 2021",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                    ),
+                  ],
+                ),
                 Padding(
                   padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
                   child: ClipRRect(
@@ -73,15 +82,15 @@ class GroundDetails extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
-                      children: const [
-                        Icon(
-                          Icons.location_on_outlined,
-                          color: Color(0xFF088F81),
+                      children: [
+                        Image.asset(
+                          'assets/images/img_3.png',
+                          height: 21,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
-                        Text(
+                        const Text(
                           "Navigate",
                           style: TextStyle(
                             decoration: TextDecoration.underline,
@@ -112,30 +121,73 @@ class GroundDetails extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
-                      children: const [
-                        Icon(Icons.wc),
-                        SizedBox(
-                          width: 5,
+                      children: [
+                        Container(
+                          height: 35,
+                          width: 30,
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(5.0)),
+                            color: const Color(0xFFE5F3F1),
+                            border: Border.all(
+                              color: const Color(0xFFE5F3F1),
+                              width: 1,
+                            ),
+                          ),
+                          child: Image.asset(
+                            'assets/images/Vector.png',
+                          ),
                         ),
-                        Icon(Icons.restaurant),
-                      ],
-                    ),
-                    Row(
-                      children: const [
-                        Icon(
-                          Icons.explore_outlined,
-                          color: Color(0xFF088F81),
+                        const SizedBox(
+                          width: 10,
                         ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text(
-                          "2 Km far.",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                        Container(
+                          width: 35,
+                          height: 30,
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(5.0)),
+                            color: const Color(0xFFE5F3F1),
+                            border: Border.all(
+                              color: const Color(0xFFE5F3F1),
+                              width: 1,
+                            ),
+                          ),
+                          child: Image.asset(
+                            'assets/images/Vector1.png',
                           ),
                         ),
                       ],
+                    ),
+                    Container(
+                      width: 100,
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(5.0)),
+                        color: const Color(0xFFE6F4F2),
+                        border: Border.all(
+                          color: const Color(0xFFE6F4F2),
+                          width: 1,
+                        ),
+                      ),
+                      child: Row(
+                        children: [
+                          Image.asset(
+                            'assets/images/Combined-Shape.png',
+                            height: 35,
+                            width: 30,
+                          ),
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          const Text(
+                            "2 Km far.",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -167,7 +219,11 @@ class GroundDetails extends StatelessWidget {
                       time: '10:00 am',
                       borderColor: Color(0xFF088F81),
                       boxColor: Colors.white,
-                      timeColor: Color(0xFF088F81),
+                      textStyle: TextStyle(
+                        color: Color(0xFF088F81),
+                        fontWeight: FontWeight.bold,
+                      ),
+                      width: 80,
                     ),
                   ],
                 ),
@@ -294,8 +350,13 @@ class GroundDetails extends StatelessWidget {
                     ),
                     TimingButton(
                       time: 'Book Now',
-                      height: 40,
-                      width: 100,
+                      textStyle: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17,
+                      ),
+                      height: 42,
+                      width: 120,
                     ),
                   ],
                 ),
@@ -327,7 +388,11 @@ class GroundDetails extends StatelessWidget {
                       time: '3:00 am',
                       borderColor: Color(0xFF088F81),
                       boxColor: Colors.white,
-                      timeColor: Color(0xFF088F81),
+                      textStyle: TextStyle(
+                        color: Color(0xFF088F81),
+                        fontWeight: FontWeight.bold,
+                      ),
+                      width: 80,
                     ),
                   ],
                 ),
@@ -347,7 +412,9 @@ class GroundDetails extends StatelessWidget {
                           borderColor: Color(0xFF088F81),
                           boxColor: Color(0xFF088F81),
                           time: "Available",
-                          timeColor: Colors.white,
+                          textStyle: TextStyle(
+                            color: Colors.white,
+                          ),
                           width: 80,
                         ),
                       ],
@@ -363,7 +430,9 @@ class GroundDetails extends StatelessWidget {
                           borderColor: Color(0xFF088F81),
                           boxColor: Color(0xFF088F81),
                           time: "Available",
-                          timeColor: Colors.white,
+                          textStyle: TextStyle(
+                            color: Colors.white,
+                          ),
                           width: 80,
                         ),
                         SizedBox(
@@ -426,8 +495,13 @@ class GroundDetails extends StatelessWidget {
                     ),
                     TimingButton(
                       time: 'Book Now',
-                      height: 40,
-                      width: 100,
+                      textStyle: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17,
+                      ),
+                      height: 42,
+                      width: 120,
                     ),
                   ],
                 ),

@@ -4,10 +4,17 @@ import '../Screens/groundDetails.dart';
 import '../Widgets/datesWidget.dart';
 import '../Widgets/groundPageWidget.dart';
 
-class GroundListPage extends StatelessWidget {
+class GroundListPage extends StatefulWidget {
   const GroundListPage({Key? key}) : super(key: key);
   static const String name = "GroundListPage";
-  static const List abc = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+  static const List abc = ["Sat", "Sun", "Mon", "Tues", "Wed", "Thur", "Fri"];
+  static int selectedDate = 3;
+
+  @override
+  State<GroundListPage> createState() => _GroundListPageState();
+}
+
+class _GroundListPageState extends State<GroundListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,18 +34,18 @@ class GroundListPage extends StatelessWidget {
         ),
         leading: IconButton(
           onPressed: () {},
-          icon: const Icon(Icons.menu),
+          icon: Image.asset('assets/images/entypo_menu.png'),
         ),
         titleSpacing: 0,
         title: const Text("Grounds"),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.search),
+            icon: Image.asset('assets/images/Search.png'),
           ),
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.tune),
+            icon: Image.asset('assets/images/Filter.png'),
           ),
         ],
       ),
@@ -51,9 +58,15 @@ class GroundListPage extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               children: [
                 for (var i = 1; i < 10; i++)
-                  Dates(
-                    date: i.toString(),
-                    day: abc[i % 7],
+                  GestureDetector(
+                    onTap: () {
+                      GroundListPage.selectedDate = i;
+                      setState(() {});
+                    },
+                    child: Dates(
+                      date: i.toString(),
+                      day: GroundListPage.abc[i % 7],
+                    ),
                   ),
               ],
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gameon/Screens/groundListPage.dart';
 
 class Dates extends StatelessWidget {
   const Dates({
@@ -21,7 +22,9 @@ class Dates extends StatelessWidget {
         borderRadius: const BorderRadius.all(
           Radius.circular(15),
         ),
-        color: date == "3" ? Colors.teal : background,
+        color: date == GroundListPage.selectedDate.toString()
+            ? Colors.teal
+            : background,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -29,19 +32,30 @@ class Dates extends StatelessWidget {
           Text(
             "Jan",
             style: TextStyle(
-                fontSize: 15, color: date == "3" ? Colors.white : textColor),
+              fontSize: 15,
+              color: date == GroundListPage.selectedDate.toString()
+                  ? Colors.white
+                  : textColor,
+            ),
           ),
           Text(
             "0$date",
             style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 15,
-                color: date == "3" ? Colors.white : textColor),
+              fontWeight: FontWeight.bold,
+              fontSize: 15,
+              color: date == GroundListPage.selectedDate.toString()
+                  ? Colors.white
+                  : textColor,
+            ),
           ),
           Text(
             "$day",
             style: TextStyle(
-                fontSize: 15, color: date == "3" ? Colors.white : textColor),
+              fontSize: 15,
+              color: date == GroundListPage.selectedDate.toString()
+                  ? Colors.white
+                  : textColor,
+            ),
           ),
         ],
       ),
